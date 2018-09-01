@@ -35,6 +35,16 @@ int GameResources::initResources(void) {
 	str = "TileGreen32.png";
 	loadImage(str, RESG_MAPTILE);
 
+	
+	str = "TileGreenWayNS32.png";
+	loadImage(str, RESG_MAPTILE_WAYNS);
+
+	str = "TileGreenWayWO32.png";
+	loadImage(str, RESG_MAPTILE_WAYWO);
+
+	str = "Icon_Bauer32.png";
+	loadImage(str, RESG_FIG_PEASANT1);
+
 	//str = "ActiveFrame.png";
 	//loadImage(str, RESG_MAPTILEACTIVE);
 
@@ -69,14 +79,14 @@ int GameResources::loadImage(string& filename, int imageID)
 
 	ALLEGRO_PATH *path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
 	al_drop_path_tail(path);
-	al_append_path_component(path, "Res");
-	dbgTxt << "Resourcepath: " << al_path_cstr(path, ALLEGRO_NATIVE_PATH_SEP) << "\n";
-	fprintf(stderr, dbgTxt.str().c_str());
+	al_append_path_component(path, RES_PATH_ADDITION);
 
-	//ALLEGRO_PATH *path = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
+#ifdef _DEBUG
+	dbgTxt << "Resourcepath: " << al_path_cstr(path, ALLEGRO_NATIVE_PATH_SEP) << "\n";
+	log_msg(&dbgTxt);
+#endif
+
 	al_set_path_filename(path, filename.c_str());
-	fprintf(stderr, al_path_cstr(path, ALLEGRO_NATIVE_PATH_SEP));
-	fprintf(stderr, "\n");
 	bitmap = al_load_bitmap(al_path_cstr(path, ALLEGRO_NATIVE_PATH_SEP));
 	al_destroy_path(path);
 

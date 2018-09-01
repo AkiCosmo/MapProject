@@ -4,15 +4,18 @@
 
 VisMapTile::VisMapTile()
 {
+	m_graphic = NULL;
 }
 
 VisMapTile::VisMapTile(ResGraphic* graphic, int line, int column, long index)
 {
 	if (graphic) {
-		graphic = graphic;
+		m_graphic = graphic;
 		mapPosLine = line;
 		mapPosCol = column;
 		index = index;
+
+		isWalkable = false;
 	}
 }
 
@@ -21,15 +24,14 @@ VisMapTile::VisMapTile(ResGraphic* graphic, int line, int column, long index)
 VisMapTile::~VisMapTile()
 {
 }
-void VisMapTile::setImage(ResGraphic* graphic)
+
+void VisMapTile::setWalkable(bool walkable)
 {
-	if (graphic) {
-		graphic = graphic;
-	}
+	isWalkable = walkable;
 }
 
 
-ALLEGRO_BITMAP* VisMapTile::getImage(void)
+ResGraphic* VisMapTile::getGraphic()
 {
 
 	//	if (m_active) {
@@ -37,7 +39,7 @@ ALLEGRO_BITMAP* VisMapTile::getImage(void)
 	//	}
 	//	else {
 	//		return m_image;
-	return (graphic->getImage(RESG_IMG_STYLE_STD));
+	return m_graphic;
 	//	}
 }
 
@@ -54,3 +56,4 @@ void VisMapTile::getMapPos(int &line, int &column) {
 	line = mapPosLine;
 	column = mapPosCol;
 }
+

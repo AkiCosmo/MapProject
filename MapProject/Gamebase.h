@@ -2,8 +2,7 @@
 
 //#include "stdafx.h"
 
-class GameData;
-//class Visuals;
+//class GameData;
 
 class Gamebase
 {

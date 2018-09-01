@@ -11,9 +11,9 @@ protected:
 
 	bool activeStat;
 
-	bool walkable;
+	bool isWalkable;
 
-	ResGraphic *graphic;
+	//ResGraphic *m_graphic;
 
 	int mapPosLine;
 	int mapPosCol;
@@ -23,12 +23,14 @@ public:
 	VisMapTile(ResGraphic* graphic, int line, int column, long index);
 	~VisMapTile();
 
-	void setImage(ResGraphic* graphic);
-	bool isClickable(void);
+	//void setGraphic(ResGraphic* graphic);
+	void setWalkable(bool walkable);
+
+	//bool isClickable(void);
 
 	//ALLEGRO_BITMAP* getImage(int style);
 
-	ALLEGRO_BITMAP* getImage(void);
+	ResGraphic* getGraphic(void);
 
 	void setMapPos(int line, int column);
 	void getMapPos(int &line, int &column);

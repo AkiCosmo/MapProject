@@ -34,11 +34,13 @@ int Gamebase::init()
 	ostringstream dbgTxt;
 
 	try {
+
+#ifdef _DEBUG
+		log_msgc("Game Initialisation started...\n");
+#endif
 		iRet = initFrameworks();	// allegro frameworks
 		iRet = initResources();
 
-		dbgTxt << "Game Initialisation\n";
-		fprintf(stderr, dbgTxt.str().c_str());
 
 		gameData = new(GameData);		// alloc of game Data class
 		if (!gameData) {
@@ -68,8 +70,9 @@ int Gamebase::init()
 
 		al_start_timer(eventTimer);
 
-		dbgTxt << "Game Initialisation finished\n";
-		fprintf(stderr, dbgTxt.str().c_str());
+#ifdef _DEBUG
+		log_msgc("Game Initialisation finished\n");
+#endif
 
 		return iRet;
 	}
@@ -149,6 +152,7 @@ void Gamebase::gameLoop(void) {
 			if (alEvent.mouse.button <= NUM_MOUSEBUTTONS) {
 				mousebuttons[alEvent.mouse.button - 1] = true;
 				fprintf(stderr, "\nMouse button 1 or 2 pressed");
+				//is_inside_bitmap 
 
 				//gameEvent.setAlEvent(&alEvent);
 				//gameEvent.setEventType(MOUSEBUTTON_DOWN);

@@ -1,7 +1,5 @@
 #pragma once
 
-//#include "Ressources.h"		// graphics management [and also for sounds in the future]
-
 #include "stdafx.h"
 
 class GameData
@@ -11,13 +9,19 @@ class GameData
 private:
 	GameResources gameResources;
 
-	VisMap mainMap;
+	VisObjects gameObjects;
+
+protected:
+	int initObjectList();
+
 public:
 	GameData();
 	~GameData();
 
 	int init();
+	VisObjects* getgameObjects();
 
 	GameResources* getResources();
+
 };
 

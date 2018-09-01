@@ -27,16 +27,18 @@ using namespace std;
 //#include "Tile.h"		// single Map tile
 //#include "GameEvent.h"	// to mamange events
 //#include "MainMap.h"	// Main map
+#include "ResGraphics.h"	// single graphic resource
 #include "GameObject.h"
 #include "VisMapTileBase.h"
-#include "ResGraphics.h"	// single graphic resource
 #include "Resources.h"		// graphics management [and also for sounds in the future]
 #include "VisMapTile.h"
 #include "VisMap.h"
 #include "Visuals.h"		// Game screen and all visuals
+#include "VisObjects.h"		
 #include "GameData.h"			// central game data management
 #include "Gamebase.h"		// central game control, startup 
 #include "VisGameWindow.h"
+#include "ObjectMovable.h"
 
 // RETRUN STATUS
 #define RET_OKAY 0
@@ -51,6 +53,11 @@ using namespace std;
 
 // GRAPHIC IDs
 #define RESG_MAPTILE		0
+#define RESG_MAPTILE_WAYNS	1
+#define RESG_MAPTILE_WAYWO	2
+#define RESG_MAPTILE_WAYSO	4
+#define RESG_FIG_PEASANT1	3
+
 #define RESG_MAPTILEACTIVE	1
 #define RESG_PLAYERSTD		2
 
@@ -61,8 +68,12 @@ using namespace std;
 #define MOVE_UP				3
 #define MOVE_DOWN			4
 
+#define RES_PATH_ADDITION	"Res"
 #define RESG_IMG_STYLE_STD	0
+
 
 // FONT IDs
 #define RESFONT_STD		0
 
+void log_msg(ostringstream* txt);
+void log_msgc(const char* txt);

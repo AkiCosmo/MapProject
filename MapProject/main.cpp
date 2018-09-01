@@ -14,12 +14,19 @@ int main(int argc, char **argv)
 	
 	gamebase.gameLoop();
 
-	//game.gameLoop();
-
 	//game.exitGame();
 
 	return 0;
 }
 
+void log_msg(ostringstream* txt) {
+
+	fprintf(stderr, txt->str().c_str());	// out to debug window
+}
+
+void log_msgc(const char* txt) {
+
+	fprintf(stderr, txt);	// out to debug window
+}
 
 

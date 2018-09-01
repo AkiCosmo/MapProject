@@ -124,25 +124,35 @@
     <ClCompile Include="GameData.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="ObjectMovable.cpp" />
     <ClCompile Include="ResGraphics.cpp" />
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="VisGameWindow.cpp" />
     <ClCompile Include="VisMap.cpp" />
     <ClCompile Include="VisMapTile.cpp" />
+    <ClCompile Include="VisObjects.cpp" />
     <ClCompile Include="Visuals.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gamebase.h" />
     <ClInclude Include="GameData.h" />
+    <ClInclude Include="History.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="ObjectMovable.h" />
     <ClInclude Include="ResGraphics.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="Resources.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Todo.h" />
     <ClInclude Include="VisGameWindow.h" />
     <ClInclude Include="VisMap.h" />
     <ClInclude Include="VisMapTile.h" />
+    <ClInclude Include="VisObjects.h" />
     <ClInclude Include="Visuals.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MapProject.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
